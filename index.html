@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil Pribadi - Zayynuwl</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -55,20 +55,65 @@
             transform: scale(1.05);
         }
 
+        /* Perbaikan pada bagian nama dan gelar */
         .profile-name {
-            color: #2c3e50;
+            background: linear-gradient(135deg, #1E90FF, #0047AB);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+            font-family: 'Montserrat', sans-serif;
             font-size: 28px;
-            font-weight: 600;
-            margin-bottom: 10px;
+            font-weight: 800;
+            margin-bottom: 12px;
             letter-spacing: -0.5px;
+            line-height: 1.2;
+        }
+
+        .titles-container {
+            margin-bottom: 25px;
         }
 
         .profile-title {
+            color: #2c3e50;
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .profile-subtitle {
             color: #7f8c8d;
             font-size: 16px;
-            font-weight: 400;
-            margin-bottom: 25px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
         }
+
+        .title-icon {
+            color: #1E90FF;
+            font-size: 16px;
+        }
+
+        /* Animasi untuk gelar */
+        @keyframes floatTitle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .profile-title, .profile-subtitle {
+            animation: floatTitle 3s ease-in-out infinite;
+        }
+
+        .profile-subtitle {
+            animation-delay: 0.5s;
+        }
+        /* End perbaikan nama dan gelar */
 
         .social-icons {
             display: flex;
@@ -160,6 +205,10 @@
             }
 
             .profile-title {
+                font-size: 16px;
+            }
+            
+            .profile-subtitle {
                 font-size: 14px;
             }
 
@@ -245,9 +294,18 @@
         <!-- Foto Profil -->
         <img src="foto.jpg" alt="Profile Picture" class="profile-image">
         
-        <!-- Nama dan Title -->
+        <!-- Nama dan Title - Perbaikan di sini -->
         <h1 class="profile-name">AL FATIH ZAINUL FALAH</h1>
-        <p class="profile-title">Full Stack Developer</p>
+        <div class="titles-container">
+            <p class="profile-title">
+                <i class="fas fa-laptop-code title-icon"></i>
+                Full Stack Developer
+            </p>
+            <p class="profile-subtitle">
+                <i class="fas fa-video title-icon"></i>
+                Content Creator
+            </p>
+        </div>
         
         <!-- Ikon Media Sosial -->
         <div class="social-icons">
